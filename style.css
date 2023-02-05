@@ -1,15 +1,18 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: rgba(206, 206, 206, 0.76);
 }
 
 #container {
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 250px 3fr 1fr;
-    grid-template-rows: 200px 2fr 2fr;
+    grid-template-columns: 400px 2fr 1fr;
+    grid-template-rows: 180px 2fr 2fr;
 }
+
+/*Dashboard section*/
 
 .dashboard {
     color: white;
@@ -17,17 +20,25 @@ body {
     grid-row: 1 / 4;
     grid-column: 1;
     display: grid;
-    padding-left: 40px;
+    grid-template-rows: 80px 1fr 1fr;
+    padding-left: 60px;
+    padding-top: 30px;
     border-right: 2px solid rgba(0, 0, 0, 0.671);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
+.ion-icon {
+    color: white;
+}
+
 .logo.holder {
-    font-size: 25px;
+    font-size: 50px;
     font-weight: bold;
     display: grid;
-}
+    grid-template-columns: 50px 1fr;
+    gap: 15px;
+ }
 
 
 
@@ -35,7 +46,7 @@ body {
     list-style-type: none;
     display: grid;
     row-gap: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
     padding: 0;
 }
@@ -44,6 +55,7 @@ li {
     display: grid; 
     grid-template-columns: 40px 1fr;
     align-self: end;
+    align-items: center;
 }
 
 .svg {
@@ -51,6 +63,8 @@ li {
     width: 30px;
     background-color: grey;
 }
+
+/*Nav bar section*/
 
 .nav {
     grid-row: 1;
@@ -60,18 +74,29 @@ li {
     grid-template-rows: repeat(2, 1fr);
     padding-left: 20px;
     padding-right: 35px;
+    background-color: white;
+    border-bottom: 3px solid rgba(192, 192, 192, 0.651);
+    padding-bottom: 15px;
+    padding-top: 10px;
+    border-radius: 10px;
 }
 
 .search-section {
     display: grid;
     grid-template-columns: 40px 1fr;
     align-content: center;
+    align-items: center;
+}
+
+.search-section > ion-icon {
+    height: 25px;
+    width: 40px;
 }
 
 .search-bar {
     width: 80%;
     height: 30px;
-    background-color: rgba(128, 128, 128, 0.63);
+    background-color: rgba(128, 128, 128, 0.397);
     border-radius: 150px;
 }
 
@@ -86,16 +111,27 @@ li {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 40%;
+    padding-left: 30%;
     gap: 40px;
+}
+
+.profile.section-1 > ion-icon {
+    width: 25px;
+    height: 40px;
 }
 
 .profile.logo {
     width: 65px;
     height: 65px;
     border-radius: 50%;
-    background-color: grey;
+    border: 1px solid black;
+    background-image: url(./Image/profile-pic.jpg);
+    background-size: cover;
+    flex-shrink: 0;
 }
+
+
+    
 
 .profile.logo,
 .notif {
@@ -132,7 +168,7 @@ li {
     margin-bottom: 0;
 }
 
-.button.nav {
+.button-nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -141,8 +177,8 @@ li {
     justify-items: center;
 }
 
-.button.nav > button {
-    background-color: rgb(175,175,175);
+.button-nav > button {
+    background-color:rgba(0, 0, 0, 0.671);
     border-radius: 15px;
     color: white;
     padding: 5px 28px;
@@ -152,15 +188,104 @@ li {
     font-weight: bold;
 }
 
+/*Projects section*/
+
 .project {
     grid-row: 2 / 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 30px repeat(2, 1fr);
+    gap: 18px;
+    padding-left: 25px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    padding-right: 25px;
 }
+
+.project > h2 {
+    grid-area: 1 / 1 / 2 / span 3;
+    margin: 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    border-left: 7px solid rgba(0, 0, 0, 0.671);
+    padding-left: 10px;
+    padding-top: 20px;
+}
+
+/*Announcements section*/
 
 .announce {
     grid-area: 2 / 3 / 3 / 4;
+    padding-top: 30px;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    margin-left: 80px;
 }
+
+.info-container {
+    background-color: white;
+    width: 280px;
+    border-radius: 5px;
+    display: grid;
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+}
+
+.info {
+    
+    border-bottom: 1px solid gray;
+}
+
+.info > h3 {
+    margin: 0;
+}
+
+.info > p {
+    margin-top: 2px;
+}
+
+/* Trending section */
 
 .trending {
     grid-row: 3 / 4;
     grid-column: 3 / 4;
+    padding-top: 30px;
+    display: grid;
+    grid-template-rows: 30px 1fr;
+    margin-bottom: 60px;
+    margin-left: 80px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.profile-container-group{
+    background-color: white;
+    width: 65%;
+    border-radius: 5px;
+    display: grid;
+    justify-content: start;
+    padding: 5px;
+    gap: 5px;
+}
+
+.profile-container > .profile.logo {
+    background-color: gray;
+}
+
+.profile-container {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+.profile-container > .name {
+    font-size: 18px;
 }
